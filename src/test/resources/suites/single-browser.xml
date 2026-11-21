@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!--
+  Ejecuta todas las pruebas en UN navegador.
+  El navegador se elige con -Dbrowser=chrome|edge (por defecto: config.properties).
+-->
+<suite name="E-commerce E2E - Navegador único" verbose="1">
+    <test name="Suite completa">
+        <packages>
+            <package name="com.idat.qa.tests"/>
+            <package name="com.idat.qa.tests.negative"/>
+        </packages>
+    </test>
+</suite>
