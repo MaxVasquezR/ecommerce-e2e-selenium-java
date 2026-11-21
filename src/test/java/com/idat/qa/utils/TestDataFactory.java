@@ -8,8 +8,12 @@ import java.util.UUID;
 /**
  * Genera datos de prueba. Cada usuario tiene un correo único para que las ejecuciones
  * (incluso en paralelo en Chrome y Edge) no choquen entre sí.
+ * <p>
+ * Todos los datos son ficticios; el dominio example.com está reservado para pruebas (RFC 2606).
  */
 public final class TestDataFactory {
+
+    private static final String EMAIL_DOMAIN = "@example.com";
 
     private TestDataFactory() {
     }
@@ -19,25 +23,25 @@ public final class TestDataFactory {
         return new User(
                 "Mr",
                 "QA Tester " + id,
-                "qa.tester." + id + "@idat-qa.com",
+                "qa.tester." + id + EMAIL_DOMAIN,
                 "Idat#Qa" + id,
                 "15",
                 "6",
                 "1998",
-                "Alexander",
-                "Navas",
-                "IDAT QA Team",
-                "Av. Javier Prado Este 123",
-                "Dpto. 402",
+                "Usuario",
+                "Prueba",
+                "Empresa Demo QA",
+                "Calle Ficticia 123",
+                "Oficina 101",
                 "United States",
-                "California",
-                "Los Angeles",
-                "90001",
+                "Estado Demo",
+                "Ciudad Demo",
+                "00000",
                 "987654321");
     }
 
     public static String unregisteredEmail() {
-        return "no.registrado." + UUID.randomUUID().toString().substring(0, 8) + "@idat-qa.com";
+        return "no.registrado." + UUID.randomUUID().toString().substring(0, 8) + EMAIL_DOMAIN;
     }
 
     public static PaymentCard validCard(User user) {

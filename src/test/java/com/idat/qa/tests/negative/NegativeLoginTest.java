@@ -65,7 +65,7 @@ public class NegativeLoginTest extends BaseTest {
     public Object[][] invalidFormInput() {
         return new Object[][]{
                 {"Correo vacío", "", "Cualquier#123", "email"},
-                {"Contraseña vacía", "qa.tester@idat-qa.com", "", "password"},
+                {"Contraseña vacía", "qa.tester@example.com", "", "password"},
                 {"Correo sin formato válido", "correo-sin-arroba", "Cualquier#123", "email"},
         };
     }
